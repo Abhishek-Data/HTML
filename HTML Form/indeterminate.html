@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Callback test</title>
+    <meta
+      name="description"
+      content="A simple HTML5 Template for new projects."
+    />
+    <meta name="author" content="SitePoint" />
+
+    <meta property="og:title" content="A Basic HTML5 Template" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://www.sitepoint.com/a-basic-html5-template/"
+    />
+    <meta
+      property="og:description"
+      content="A simple HTML5 Template for new projects."
+    />
+    <meta property="og:image" content="image.png" />
+
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="css/styles.css?v=1.0" />
+    <!-- <link href="css/minimal-form.css" rel="stylesheet" type="text/css" /> -->
+  </head>
+
+  <body>
+    <!-- your content here... -->
+
+    <h2>Callback test</h2>
+    <hr />
+    <!-- For Header Section -->
+    <header>
+      <!-- For navigation Menu -->
+      <nav></nav>
+    </header>
+    <!-- For Main content -->
+    <main>
+      <!-- All the text/ Blog Post -->
+      <article>
+        <!-- For different section of blog -->
+        <section>
+          <!-- Not come into main content/ For advertisement -->
+          <aside></aside>
+          <form>
+            <fieldset>
+            <legend>Complete the recipe</legend>
+              <div>
+                <input type="checkbox" id="EnchTbl" name="EnchTbl">
+                <label for="EnchTbl">Enchantment table</label>
+                <ul>
+                  <li>
+                    <input type="checkbox" id="book" name="ingredient" value="book">
+                    <label for="book">Book</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" id="diamonds" name="ingredient" value="diamonds">
+                    <label for="diamonds">Diamonds (x2)</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" id="obsidian" name="ingredient" value="obsidian">
+                    <label for="obsidian">Obsidian (x4)</label>
+                  </li>
+                </ul>
+              </div>
+            </fieldset>
+          </form>
+        </section>
+      </article>
+    </main>
+
+    <footer></footer>
+    <!-- For Footer Section -->
+    <script>
+        var overall = document.querySelector('input[id="EnchTbl"]');
+        var ingredients = document.querySelectorAll('ul input');
+      
+        overall.addEventListener('click', function(e) {
+          e.preventDefault();
+        });
+      
+        for(var i = 0; i < ingredients.length; i++) {
+          ingredients[i].addEventListener('click', updateDisplay);
+        }
+      
+        function updateDisplay() {
+          var checkedCount = 0;
+          for(var i = 0; i < ingredients.length; i++) {
+            if(ingredients[i].checked) {
+              checkedCount++;
+            }
+          }
+      
+          if(checkedCount === 0) {
+            overall.checked = false;
+            overall.indeterminate = false;
+          } else if(checkedCount === ingredients.length) {
+            overall.checked = true;
+            overall.indeterminate = false;
+          } else {
+            overall.checked = false;
+            overall.indeterminate = true;
+          }
+        }
+      
+        </script>
+    <script src="js/scripts.js"></script>
+  </body>
+</html>

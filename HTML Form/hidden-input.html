@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Hidden inputs</title>
+    <meta
+      name="description"
+      content="A simple HTML5 Template for new projects."
+    />
+    <meta name="author" content="SitePoint" />
+
+    <meta property="og:title" content="A Basic HTML5 Template" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://www.sitepoint.com/a-basic-html5-template/"
+    />
+    <meta
+      property="og:description"
+      content="A simple HTML5 Template for new projects."
+    />
+    <meta property="og:image" content="image.png" />
+
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="css/styles.css?v=1.0" />
+    <!-- <link href="css/minimal-form.css" rel="stylesheet" type="text/css" /> -->
+    <style>
+        html {
+          font-family: sans-serif;
+        }
+    
+        form {
+          width: 500px;
+        }
+    
+        div {
+          display: flex;
+          margin-bottom: 10px;
+        }
+    
+        label {
+          flex: 2;
+          line-height: 2;
+          text-align: right;
+          padding-right: 20px;
+        }
+    
+        input, textarea {
+          flex: 7;
+          font-family: sans-serif;
+          font-size: 1.1rem;
+          padding: 5px;
+        }
+    
+        textarea {
+          height: 60px;
+        }
+    
+      </style>
+  </head>
+
+  <body>
+    <!-- your content here... -->
+
+    <h2>Hidden inputs</h2>
+    <hr />
+    <!-- For Header Section -->
+    <header>
+      <!-- For navigation Menu -->
+      <nav></nav>
+    </header>
+    <!-- For Main content -->
+    <main>
+      <!-- All the text/ Blog Post -->
+      <article>
+        <!-- For different section of blog -->
+        <section>
+          <!-- Not come into main content/ For advertisement -->
+          <aside></aside>
+          <form>
+            <div>
+                <label for="title">Post title:</label>
+                <input type="text" id="title" name="title" value="My excellent blog post">
+              </div>
+              <div>
+                <label for="content">Post content:</label>
+                <textarea id="content" name="content">
+          This is the content of my excellent blog post. I hope you enjoy it!
+                </textarea>
+              </div>
+              <div>
+                <button type="submit">Update post</button>
+              </div>
+              <input type="hidden" id="postId" name="postId" value="34657">
+
+          </form>
+        </section>
+      </article>
+    </main>
+
+    <footer></footer>
+    <!-- For Footer Section -->
+
+    <script src="js/scripts.js"></script>
+  </body>
+</html>
